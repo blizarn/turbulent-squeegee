@@ -2,6 +2,7 @@
  * Please see the included LICENSE.md file for license terms and conditions.
  */
 /* jshint browser:true */
+/* jshint -W117 */
 var Game = {};
 var canvas = document.getElementById('gameScene');
 var context = canvas.getContext('2d');
@@ -9,9 +10,9 @@ Game.spriteSheet = new Image();
 Game.spriteSheet.src = "asset/tiles.png";
 
 var GameLoop = function GameLoop() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
     Game.Map.update();
     Game.Camera.update();
+    context.clearRect(0, 0, canvas.width, canvas.height);
     Game.Camera.draw();
     window.requestAnimationFrame(GameLoop);
 };
@@ -19,7 +20,7 @@ var GameLoop = function GameLoop() {
 function CartToIso(x, y) {
     var x1 = (x - y);
     var y1 = (x+y)/2;
-    return [(x1 + canvas.width/2), (y1 + canvas.height/2)];
+    return [x1 + Math.floor(canvas.width/2), y1 + Math.floor(canvas.height/2)];
 }
 
 function IsoToCart(x, y) {
@@ -39,10 +40,14 @@ function Map(x) {
 
 
 this.update = function update() {
-    
+    for (var i=0; i < 128; i++) {
+        for (var j=0; j < 128; j++) {
+            this.val[i][j].update();
+        }
+    }
 };
 
-this.draw = function draw(x, y, ctx) {
+this.draw = function draw() {
     for (var i=0; i < 128; i++) {
         for (var j=0; j < 128; j++) {
             this.val[i][j].draw();
@@ -55,7 +60,44 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
         
 Game.controls = {};
-        
+Game.controls.Mouse = {};
+canvas.addEventListener("click", function(e){ 
+    var button = e.button;
+    Game.controls.Mouse.Pos = IsoToCart(e.clientX - canvas.width/2, e.clientY - canvas.height/2);
+    var mouse = Game.controls.Mouse.Pos;
+    mouse[0] = Math.floor(mouse[0]/32);
+    mouse[1] = Math.floor(mouse[1]/32);
+    mouse[0] += (Game.Camera.getX()/32);
+    mouse[1] += (Game.Camera.getY()/32);
+    switch(button) {
+        case 0:
+            Game.controls.Mouse.leftbutton = true;
+            break;
+        case 1:
+            Game.controls.Mouse.wheelbutton = true;
+            break;
+        case 2:
+            Game.controls.Mouse.rightbutton = true;
+            break;
+    }
+    
+    window.requestAnimationFrame(function(){
+        switch(button) {
+            case 0:
+                Game.controls.Mouse.leftbutton = false;
+                break;
+            case 1:
+                Game.controls.Mouse.wheelbutton = false;
+                break;
+            case 2:
+                Game.controls.Mouse.rightbutton = false;
+                break;
+        }
+    });
+    
+}, false);
+
+
 window.addEventListener("keydown", function(e){
     switch(e.keyCode)
     {
@@ -94,7 +136,9 @@ window.addEventListener("keyup", function(e){
             break;		
     }
 }, false);
-        
-Game.Camera = new this.Camera(128*16, 128*16, 128*32, 128*32, Game);
+
+Game.tools = {};
+Game.tools.Road = new RoadTool();
+Game.Camera = new this.Camera(0, 0, 128*32, 128*32, Game);
 Game.Map = new Map(128);
 Game.spriteSheet.onload = function(){GameLoop();};
