@@ -1,13 +1,17 @@
-function Camera(xa, ya, xb, yb, Game) {
+/* jshint -W117 */
+function Camera(xa, ya) {
     var x = xa;
     var y = ya;
-    var boundaryX = xb;
-    var boundaryY = yb;
+    
+    var Game = window.Game;
+    
     var speed = 16;
     
     this.getY = function getY() {return y;};
     this.getX = function getX() {return x;};
     this.update = function update() {
+        var boundaryY = Game.Map.val.length*32;
+        var boundaryX = boundaryY;
         if (Game.controls.left === true) {
             if (x - speed> 0) {
                 x -= speed;

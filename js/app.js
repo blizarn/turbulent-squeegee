@@ -141,6 +141,6 @@ window.addEventListener("keyup", function(e){
 
 Game.tools = {};
 Game.tools.Road = new RoadTool();
-Game.Camera = new this.Camera(0, 0, MapSize*32, MapSize*32, Game);
 Game.Map = new Map(MapSize);
+Game.Camera = new this.Camera(0, 0);
 Game.spriteSheet.onload = function(){GameLoop();};
