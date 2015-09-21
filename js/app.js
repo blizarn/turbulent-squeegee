@@ -31,7 +31,7 @@ function IsoToCart(x, y) {
     return [x1, y1];
 }
 
-function Map(x) {
+/*function Map(x) {
     this.val = new Array(x);
     for (var i = 0; i < x; i++) {
         this.val[i] = new Array(x);
@@ -56,7 +56,7 @@ this.draw = function draw() {
         }
     }
 };
-}
+}*/
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -69,8 +69,8 @@ canvas.addEventListener("click", function(e){
     var mouse = Game.controls.Mouse.Pos;
     mouse[0] = Math.floor(mouse[0]/32);
     mouse[1] = Math.floor(mouse[1]/32);
-    mouse[0] += (Game.Camera.getX()/32);
-    mouse[1] += (Game.Camera.getY()/32);
+    mouse[0] += Math.floor(Game.Camera.getX()/32);
+    mouse[1] += Math.floor(Game.Camera.getY()/32);
     switch(button) {
         case 0:
             Game.controls.Mouse.leftbutton = true;
