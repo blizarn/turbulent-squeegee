@@ -146,7 +146,11 @@ function RoadTool() {
                             break;
                         case 5:
                             //South-East
-                            df = roadType.THREESOUTH;
+                            if (end === true) {
+                                df = roadType.SE;
+                            } else {
+                                df = roadType.THREESOUTH;
+                            }
                             break;
                         case 6:
                             //South-West
@@ -184,6 +188,8 @@ function RoadTool() {
                             //All
                             df = roadType.FOURWAY;
                             break;
+                        case 15:
+                            df = roadType.THREEEAST;
                     }
                     break;
                 case roadType.VERTICAL:
