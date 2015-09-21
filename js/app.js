@@ -12,7 +12,7 @@ Game.spriteSheet.src = "asset/tiles.png";
 var MapSize = 128;
 
 var GameLoop = function GameLoop() {
-    Game.Map.update();
+    //Game.Map.update();
     Game.Camera.update();
     context.clearRect(0, 0, canvas.width, canvas.height);
     Game.Camera.draw();
@@ -67,10 +67,10 @@ canvas.addEventListener("click", function(e){
     var button = e.button;
     Game.controls.Mouse.Pos = IsoToCart(e.clientX - canvas.width/2, e.clientY - canvas.height/2);
     var mouse = Game.controls.Mouse.Pos;
-    mouse[0] = Math.floor(mouse[0]/32);
-    mouse[1] = Math.floor(mouse[1]/32);
-    mouse[0] += Math.floor(Game.Camera.getX()/32);
-    mouse[1] += Math.floor(Game.Camera.getY()/32);
+    mouse[0] = Math.floor(mouse[0]/32 + Game.Camera.getX()/32);
+    mouse[1] = Math.floor(mouse[1]/32 + Game.Camera.getY()/32);
+    //mouse[0] += Math.floor(Game.Camera.getX()/32);
+    //mouse[1] += Math.floor(Game.Camera.getY()/32);
     switch(button) {
         case 0:
             Game.controls.Mouse.leftbutton = true;

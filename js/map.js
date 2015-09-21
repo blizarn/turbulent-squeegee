@@ -33,47 +33,47 @@ Map.prototype.render = function render(x, y, tile) {
         case 1:
             context.drawImage(Game.spriteSheet, 0, 0, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 3:
+        case 2:
             //Fourway
             context.drawImage(Game.spriteSheet, 0, 32, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 4:
+        case 3:
             //Threeway North
             context.drawImage(Game.spriteSheet, 63, 64, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 5:
+        case 4:
             //Threeway South
             context.drawImage(Game.spriteSheet, 126, 96, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 6:
+        case 5:
             //Threeway East
             context.drawImage(Game.spriteSheet, 126, 64, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 7:
+        case 6:
             //Threeway West
             context.drawImage(Game.spriteSheet, 63, 96, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 8:
+        case 7:
             //Vertical
             context.drawImage(Game.spriteSheet, 126, 32, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 9:
+        case 8:
             //Horizontal
             context.drawImage(Game.spriteSheet, 63, 32, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 10:
+        case 9:
             //South-West
             context.drawImage(Game.spriteSheet, 0, 64, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 11:
+        case 10:
             //South-East
             context.drawImage(Game.spriteSheet, 189, 64, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 12:
+        case 11:
             //North-West
             context.drawImage(Game.spriteSheet, 189, 32, 64, 32, x1[0], x1[1], 64, 32);
             break;
-        case 13:
+        case 12:
             //North-East
             context.drawImage(Game.spriteSheet, 0, 96, 64, 32, x1[0], x1[1], 64, 32);
             break;
