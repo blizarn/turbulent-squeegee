@@ -1,23 +1,23 @@
 /*jshint esnext: true*/
 /* jshint -W117 */
-function Tile(sx, sy) {
+function Tile() {
     
-    this.x = sx;
+    /*this.x = sx;
     this.y = sy;
     this.spriteX = sx*2;
     this.spriteY = sy;
     var x, y;
     this.data = undefined;
     
-    this.tiles = {GRASS: 1, STONE: 2, OCCUPIED: 3};
+    this.tiles = {GRASS: 1, STONE: 2, OCCUPIED: 3};*/
     
     var a = Math.round(Math.random());
     
     if (a === 1) {
-        this.type = this.tiles.GRASS;
-    } else if (a === 0) this.type = this.tiles.STONE;
+        return 0;
+    } else if (a === 0) return 1;
     
-    this.update = function update() {
+    /*this.update = function update() {
         x = this.x - (Game.Camera.getX()/32);
         y = this.y - (Game.Camera.getY()/32);
         if (this.data !== undefined) this.data.update();
@@ -33,22 +33,21 @@ function Tile(sx, sy) {
             
             switch(this.type) {
                 case this.tiles.GRASS:
-                    context.drawImage(Game.spriteSheet, 63, 0, 64, 32, (x1[0]-32), x1[1], 64, 32);
+                    return 0;
                     break;
                 case this.tiles.STONE:
-                    context.drawImage(Game.spriteSheet, 0, 0, 64, 32, (x1[0]-32), x1[1], 64, 32);
-                    break;
+                    return 1;
                 case this.tiles.OCCUPIED:
                     //window.console.log(this.data);
                     this.data.draw();
             }
         }
-    };
+    };*/
 }
 roadType = {FOURWAY: 1, THREENORTH: 2, THREESOUTH: 3,
             THREEEAST: 4, THREEWEST: 5, VERTICAL: 6, 
             HORIZONTAL: 7, SW: 8, SE: 9, NW: 10, NE: 11};
-function Road(tile, type) {
+/* function Road(tile, type) {
     
     var place = tile;
     var x, y;
@@ -105,4 +104,4 @@ function Road(tile, type) {
         }
     };
     
-}
+} */

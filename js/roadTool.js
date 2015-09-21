@@ -10,9 +10,6 @@ function RoadTool() {
         active = true;
         window.console.log(cursor);
         var start = Game.Map.val[cursor[0]][cursor[1]];
-        start.data = new Road(start, roadType.FOURWAY);
-        start.type = start.tiles.OCCUPIED;
-        
     };
     
     this.getActive = function getActive() {return active;};
@@ -123,7 +120,7 @@ function RoadTool() {
         if (pointA[0] === pointB[0]) {
             for (var i = pointA[0]; i <= pointB[0]; i++) {
                 for (var j = pointA[1]; j <= pointB[1]; j++) {
-                    if (map[i][j].type !== map[i][j].tiles.OCCUPIED) {
+                    if (map[i][j] !== 0 || map[i][j] !== 1) {
                         map[i][j].type = map[i][j].tiles.OCCUPIED;
                         map[i][j].data = new Road(map[i][j], roadType.VERTICAL);
                     } else if (map[i][j].data.prototype === new Road().prototype) {

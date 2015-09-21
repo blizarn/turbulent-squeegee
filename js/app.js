@@ -9,6 +9,8 @@ var context = canvas.getContext('2d');
 Game.spriteSheet = new Image();
 Game.spriteSheet.src = "asset/tiles.png";
 
+var MapSize = 128;
+
 var GameLoop = function GameLoop() {
     Game.Map.update();
     Game.Camera.update();
@@ -29,7 +31,7 @@ function IsoToCart(x, y) {
     return [x1, y1];
 }
 
-function Map(x) {
+/*function Map(x) {
     this.val = new Array(x);
     for (var i = 0; i < x; i++) {
         this.val[i] = new Array(x);
@@ -40,21 +42,21 @@ function Map(x) {
 
 
 this.update = function update() {
-    for (var i=0; i < 128; i++) {
-        for (var j=0; j < 128; j++) {
+    for (var i=0; i < this.val.length; i++) {
+        for (var j=0; j < this.val.length; j++) {
             this.val[i][j].update();
         }
     }
 };
 
 this.draw = function draw() {
-    for (var i=0; i < 128; i++) {
-        for (var j=0; j < 128; j++) {
+    for (var i=Math.floor(Math.max(0, (Game.Camera.getX()-canvas.width)/32)); i < Math.min(MapSize, (Game.Camera.getX()+canvas.width)/32); i++) {
+        for (var j=Math.floor(Math.max(0, (Game.Camera.getY()-canvas.height*1.5)/32)); j < Math.min(MapSize, (Game.Camera.getY()+canvas.height*1.5)/32); j++) {
             this.val[i][j].draw();
         }
     }
 };
-}
+}*/
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -67,8 +69,8 @@ canvas.addEventListener("click", function(e){
     var mouse = Game.controls.Mouse.Pos;
     mouse[0] = Math.floor(mouse[0]/32);
     mouse[1] = Math.floor(mouse[1]/32);
-    mouse[0] += (Game.Camera.getX()/32);
-    mouse[1] += (Game.Camera.getY()/32);
+    mouse[0] += Math.floor(Game.Camera.getX()/32);
+    mouse[1] += Math.floor(Game.Camera.getY()/32);
     switch(button) {
         case 0:
             Game.controls.Mouse.leftbutton = true;
@@ -139,6 +141,6 @@ window.addEventListener("keyup", function(e){
 
 Game.tools = {};
 Game.tools.Road = new RoadTool();
-Game.Camera = new this.Camera(0, 0, 128*32, 128*32, Game);
-Game.Map = new Map(128);
+Game.Map = new Map(MapSize);
+Game.Camera = new this.Camera(0, 0);
 Game.spriteSheet.onload = function(){GameLoop();};
