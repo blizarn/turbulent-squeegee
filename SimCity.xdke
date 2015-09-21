@@ -4,6 +4,7 @@
     "initialAutoPluginCount": 0,
     "currentBuildConfiguration": "WebApp",
     "projectFiles": {},
-    "projectDirectories": {}
+    "projectDirectories": {},
+    "currentService": {}
   }
 }
