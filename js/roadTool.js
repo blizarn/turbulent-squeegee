@@ -128,7 +128,7 @@ function RoadTool() {
                 }
             }
         }
-        window.console.log(end);
+        
         if (config === 0) {
             map[x][y] = df;
         } else {
@@ -271,7 +271,6 @@ function RoadTool() {
                     break;
             }
             map[x][y] = df;
-            window.console.log(config);
         }
     };
     
@@ -293,7 +292,6 @@ function RoadTool() {
                     } else {
                         if ((i === pointB[0] && j === pointB[1]) || (i === pointA[0] && j === pointA[1])) {
                             checkTiles(i, j, map, roadType.VERTICAL, true);
-                            window.console.log([pointB, [i, j]]);
                         } else {
                             checkTiles(i, j, map, roadType.VERTICAL, false);
                         }

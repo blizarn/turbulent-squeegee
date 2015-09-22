@@ -12,7 +12,6 @@ Game.spriteSheet.src = "asset/tiles.png";
 var MapSize = 128;
 
 var GameLoop = function GameLoop() {
-    //Game.Map.update();
     Game.Camera.update();
     context.clearRect(0, 0, canvas.width, canvas.height);
     Game.Camera.draw();
@@ -30,33 +29,6 @@ function IsoToCart(x, y) {
     var y1 = (2*y - x)/2;
     return [x1, y1];
 }
-
-/*function Map(x) {
-    this.val = new Array(x);
-    for (var i = 0; i < x; i++) {
-        this.val[i] = new Array(x);
-        for (var j = 0; j < x; j++) {
-            this.val[i][j] = new window.Tile(i, j);
-        }
-    }
-
-
-this.update = function update() {
-    for (var i=0; i < this.val.length; i++) {
-        for (var j=0; j < this.val.length; j++) {
-            this.val[i][j].update();
-        }
-    }
-};
-
-this.draw = function draw() {
-    for (var i=Math.floor(Math.max(0, (Game.Camera.getX()-canvas.width)/32)); i < Math.min(MapSize, (Game.Camera.getX()+canvas.width)/32); i++) {
-        for (var j=Math.floor(Math.max(0, (Game.Camera.getY()-canvas.height*1.5)/32)); j < Math.min(MapSize, (Game.Camera.getY()+canvas.height*1.5)/32); j++) {
-            this.val[i][j].draw();
-        }
-    }
-};
-}*/
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
