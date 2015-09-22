@@ -83,8 +83,8 @@ Map.prototype.render = function render(x, y, tile) {
 };
 
 Map.prototype.draw = function draw() {
-    for (var i=Math.floor(Math.max(0, (Game.Camera.getX()-canvas.width)/32)); i < Math.min(MapSize, (Game.Camera.getX()+canvas.width)/32); i++) {
-        for (var j=Math.floor(Math.max(0, (Game.Camera.getY()-canvas.height*1.5)/32)); j < Math.min(MapSize, (Game.Camera.getY()+canvas.height*1.5)/32); j++) {
+    for (var i=Math.floor(Math.max(0, (Game.Camera.getX()-canvas.width)/32)); i < Math.min(Game.Map.val.length, (Game.Camera.getX()+canvas.width)/32); i++) {
+        for (var j=Math.floor(Math.max(0, (Game.Camera.getY()-canvas.height*1.5)/32)); j < Math.min(Game.Map.val.length, (Game.Camera.getY()+canvas.height*1.5)/32); j++) {
             this.render(i, j, Game.Map.val[i][j]);
         }
     }
