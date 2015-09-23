@@ -1,10 +1,18 @@
 /* jshint -W117 */
 function Map(x) {
     this.val = new Array(x);
+    
+    noise.seed(Math.random());
+    
     for (var i = 0; i < x; i++) {
         this.val[i] = new Array(x);
         for (var j = 0; j < x; j++) {
-            this.val[i][j] = Tile();
+            var id = (noise.simplex2(i, j));
+            if (id < -0.45) {
+                this.val[i][j] = 1;
+            } else {
+                this.val[i][j] = 0;
+            }
         }
     }
 }

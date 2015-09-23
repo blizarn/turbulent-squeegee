@@ -7,7 +7,7 @@ var Game = {};
 var canvas = document.getElementById('gameScene');
 var context = canvas.getContext('2d');
 Game.spriteSheet = new Image();
-Game.spriteSheet.src = "asset/tiles.png";
+Game.spriteSheet.src = "asset/j0kMP8g.png";
 
 var MapSize = 128;
 

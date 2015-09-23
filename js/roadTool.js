@@ -120,9 +120,9 @@ function RoadTool() {
         }
         
         if (recur === false) {
-            if (x < map.length) subUpdate(x + 1, y, map);
+            if (x < map.length - 1) subUpdate(x + 1, y, map);
             if (x > 0) subUpdate(x - 1, y, map);
-            if (y < map.length) subUpdate(x, y + 1, map);
+            if (y < map.length - 1) subUpdate(x, y + 1, map);
             if (y > 0) subUpdate(x, y - 1, map);
         }
     };
