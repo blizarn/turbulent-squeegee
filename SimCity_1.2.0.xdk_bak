@@ -1,12 +1,12 @@
 {
   "project": {
-    "projectSettingsVersion": "2.0.0",
+    "projectSettingsVersion": "1.2",
     "creationData": {
       "type": "Import",
       "projectTypeName": "com.intel.xdk.projecttype.webapp",
       "src": "",
       "projectGuid": "bf385057-f155-4a95-91da-68611035ffb2",
-      "lastModifiedDate": 1443024885999,
+      "lastModifiedDate": 1442802297318,
       "creationDate": 1442802297221
     },
     "sourceDirectory": "",
@@ -21,15 +21,7 @@
       "XDK-game-app"
     ],
     "projectFiles": {},
-    "projectDirectories": {
-      "xdk": {
-        "settings": {
-          "project": {
-            "XDK-generated": "true"
-          }
-        }
-      }
-    },
+    "projectDirectories": {},
     "libraries": [],
     "cordovaPlugins": [],
     "serviceMethods": [],
@@ -46,14 +38,11 @@
         "isActive_": true,
         "appName_": "SimCity",
         "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -75,14 +64,11 @@
         "isActive_": true,
         "appName_": "SimCity",
         "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -103,14 +89,11 @@
         "isActive_": true,
         "appName_": "SimCity",
         "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -127,14 +110,11 @@
         "isActive_": true,
         "appName_": "SimCity",
         "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -150,14 +130,11 @@
         "isActive_": true,
         "appName_": "SimCity",
         "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -172,14 +149,11 @@
         "isActive_": true,
         "appName_": "SimCity",
         "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -194,14 +168,11 @@
         "isActive_": true,
         "appName_": "SimCity",
         "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -216,45 +187,17 @@
         "isActive_": true,
         "appName_": "SimCity",
         "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.1"
-      },
-      "WP81": {
-        "platform_": "wp81",
-        "runtime_": "W3C on Cordova",
-        "name_": "WP81",
-        "preferences_": {},
-        "isActive_": true,
-        "appName_": "SimCity",
-        "appID_": "not.yet.specified",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [],
-          "intents": [],
-          "navigation": []
-        },
-        "icons_": [],
-        "splashes_": [],
-        "addlPermissions_": "",
-        "excludedLibraries_": "",
-        "appVersion_": "0.0.0.1",
-        "cordovaCLIVersion_": "5.1.1"
       }
-    },
-    "testDirectory": "test"
-  },
-  "editorTab": {
-    "showLiveDevelopmentTasksPanel": false
+    }
   }
 }
